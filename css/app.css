@@ -56,3 +56,13 @@ a.topbtn{
 label.redz{
 	color: #cc181e;
 }
+
+#SResults li:hover {
+  background: #d0d0d0;
+  cursor: default;
+}
+
+#SResults li{
+	background-color: #eee; 
+	box-shadow: 10px 10px 5px #888888;
+}
