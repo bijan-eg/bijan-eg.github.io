@@ -4,7 +4,8 @@
 	<div class="tab-pane active" id="object-form">
         <form  class="form-horizontal"  >
 			<fieldset>
-				<div class="control-group" >
+			<div class="control-group borderline1">
+				<div class="control-group" id="nameInput">
 					<label for="package_name" class="control-label">Package name:</label>
 					<div class="controls">
 						<input id="package_name" class="form-control" ng-model="package_name" type="text">
@@ -29,72 +30,67 @@
 					</div>
 					
 				</div>
-				<div class="form-group">
+			</div>
+				<br>
+				<div class="control-group borderline2">
+				<div id="pkgtype">
 					<label class="control-label">Package type:</label>
 					<div class="radio">
 						<label>
-							<input type="radio" value="VC" ng-model="package_type" class="nfi">Vacation
+							<input type="radio" value="Vacation" ng-model="package_type" class="nfi">Vacation
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" value="HM" ng-model="package_type" class="nfi">Honeymoon
+							<input type="radio" value="Honeymoon" ng-model="package_type" class="nfi">Honeymoon
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio"  value="ED" ng-model="package_type" class="nfi">Educational
+							<input type="radio"  value="Educational" ng-model="package_type" class="nfi">Educational
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio"  value="AD" ng-model="package_type" class="nfi">Adventure
+							<input type="radio"  value="Adventure" ng-model="package_type" class="nfi">Adventure
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" value="FM" ng-model="package_type" class="nfi">Family
+							<input type="radio" value="Family" ng-model="package_type" class="nfi">Family
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio"  value="PL" ng-model="package_type" class="nfi">Pilgrimage
+							<input type="radio"  value="Pilgrimage" ng-model="package_type" class="nfi">Pilgrimage
 						</label>
+					</div>
+					<br>
+				</div>
+				<div id="pkgService">
+					<h5>Which of these services are included in the package?</h5>
+					<div class="control-group ">
+					<input id="flight" type="checkbox">
+						<label for="flight" class="control-label">Flight:</label>						
+							
+					</div>
+					<div class="control-group ">
+							<input id="hotel"  type="checkbox">
+						<label for="hotel" class="control-label">Hotel:</label>
+					</div>
+					<div class="control-group ">
+							<input id="insurance" type="checkbox">
+						<label for="insurance" class="control-label">Insurance:</label>
+					</div>
+					<div class="control-group ">
+							<input id="restaurant" type="checkbox">
+						<label for="restaurant" class="control-label">Restaurant:</label>
+					</div>
+					<div class="control-group ">
+							<input id="local_booking"  type="checkbox">
+						<label for="local_booking" class="control-label">Local booking:</label>
 					</div>
 				</div>
-				<br>
-				<h4>Which of these services are included in the package?</h4>
-				<div class="borderline">
-					<div class="control-group ">
-						<label for="flight" class="control-label">Flight:</label>
-						<div class="controls">
-							<input id="flight" type="checkbox">
-						</div>
-					</div>
-					<div class="control-group ">
-						<label for="hotel" class="control-label">Hotel:</label>
-						<div class="controls">
-							<input id="hotel"  type="checkbox">
-						</div>
-					</div>
-					<div class="control-group ">
-						<label for="insurance" class="control-label">Insurance:</label>
-						<div class="controls">
-							<input id="insurance" type="checkbox">
-						</div>
-					</div>
-					<div class="control-group ">
-						<label for="restaurant" class="control-label">Restaurant:</label>
-						<div class="controls">
-							<input id="restaurant" type="checkbox">
-						</div>
-					</div>
-					<div class="control-group ">
-						<label for="local_booking" class="control-label">Local booking:</label>
-						<div class="controls">
-							<input id="local_booking"  type="checkbox">
-						</div>
-					</div>
 				</div>
 				<br>
 				<div class="form-actions">

@@ -1,17 +1,17 @@
 .thumbnails {
     margin-left: -30px;
-  }
-  .thumbnails > li {
+}
+.thumbnails > li {
     margin-left: 30px;
-  }
-  .row,
-  .thumbnails {
+}
+.thumbnails {
     margin-left: 0;
-  }
-  .thumbnails > li {
+}
+.thumbnails > li {
     float: left;
     margin-left: 1;
-	}
+}
+	
 .thumbnail {
   display: block;
   padding: 4px;
@@ -36,7 +36,7 @@ margin: 0px;
 }
 .thumbnail p {
 font-size: 15px;
-color: #727272;
+color: #373737;
 }
 
 .thumbnail span {
@@ -54,8 +54,7 @@ border-bottom-right-radius: 4px;
 }
 .span3 {
     width: 270px;
-  }
-  
+}
   
 .partialBackground{
 	background-color: #DDDDDD;
