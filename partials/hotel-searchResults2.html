@@ -4,53 +4,51 @@
 	<h4><b>Results for package: <u>{{singlepackage.package_name}}</u></b></h4>
 	</p>
 </div>
-<div>
-<ul>
-<li>
+<div style="margin: 20px;">
+<ul class="media-list">
+<li >
 	<!--===================================================result 1==================================================-->
-	<div class="col-lg-3 col-lg-2 sidebar">
 		
-		<p><h3>{{hotelResults.HotelListResponse.EanWsError.verboseMessage}}</h3></p>
-		<p>
-		<img src="http://media.expedia.com{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].thumbNailUrl}}" width="175" height="175">
-		</p>
-		<p>
-		<img src="{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].tripAdvisorRatingUrl}}">
-		</p>
-		<p><a ng-href="#/created-packages/{{singlepackage.id}}/reserve/hotelSearch/booking/
+		<div class="col-lg-3 col-lg-2 sidebar">
+		<img  src="http://media.expedia.com{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].thumbNailUrl}}" width="130" height="130">
+		<img  src="{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].tripAdvisorRatingUrl}}">
+		
+		<a  ng-href="#/created-packages/{{singlepackage.id}}/reserve/hotelSearch/booking/
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].hotelId}}/
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].RoomRateDetailsList.RoomRateDetails.roomTypeCode}}/
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].RoomRateDetailsList.RoomRateDetails.rateCode}}/
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}">
 			<button class="btn btn-primary" >Selecct this Hotel</button> 
 		</a>
-		</p>
-		<br>
-	</div>
-	<br>
-	<div class="col-sm-9 main">
-		<div ng-repeat="hotel in hotelResults">
-			<br>
-			<p><h4>Hotel ID: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].hotelId}}</h4></p>
-			<p><h4>Rate: ${{hotelResults.HotelListResponse.HotelList.HotelSummary[0].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}</h4></p>
-			<p><h4>Hotel Name: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].name}}</h4></p>
-			<p><h4>Hotel Address: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].address1}}, {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].city}}, {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].stateProvinceCode}} {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].postalCode}}</h4></p>
-			<p><h4>Hotel TripAdvisor link: 
-			<a href= "{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].deepLink}}">TravelNow</a></h4></p>
-			<p><h4>lat: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].latitude}} </h4></p>
-			<p><h4>long: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].longitude}}</h4></p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 		</div>
-	</div>
+		<div class="media-body">
+			<p><h4 class="media-heading" style="font: bold 20px/1.5 Helvetica, Verdana, sans-serif;">Hotel Name: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].name}}</h4></p>		
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>Rate: ${{hotelResults.HotelListResponse.HotelList.HotelSummary[0].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}</h4></p>
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>Hotel ID: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].hotelId}}</h4></p>
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>Hotel Address: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].address1}}, {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].city}}, {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].stateProvinceCode}} {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].postalCode}}</h4></p>
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>Hotel TripAdvisor link: 
+			<a href= "{{hotelResults.HotelListResponse.HotelList.HotelSummary[0].deepLink}}">TravelNow</a></h4></p>
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>lat: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].latitude}} </h4></p>
+			<p style="font: 200 12px/1.5 Georgia, Times New Roman, serif;"><h4>long: {{hotelResults.HotelListResponse.HotelList.HotelSummary[0].longitude}}</h4></p>
+		</div>
+		<div id="googleMap" style="width:250px;height:190px;"></div>
+		<script>
+			function initialize()
+			{
+				var mapProp = {
+					center:new google.maps.LatLng(38.54356,-121.74231),
+					zoom:18,
+					mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
 </li>
 	<!--===========================================================================================================
 	===========================================================result 2================================================= -->
 <li>
-	<div class="col-lg-3 col-lg-2 sidebar">			
+	
 		<p><h3>{{hotelResults.HotelListResponse.EanWsError.verboseMessage}}</h3></p>
 		<p>
 		<img src="http://media.expedia.com{{hotelResults.HotelListResponse.HotelList.HotelSummary[1].thumbNailUrl}}" width="175" height="175">
@@ -65,11 +63,6 @@
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[1].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}">
 			<button ng-click="bookSelectedHotel(booking)" class="btn btn-primary" >Selecct this Hotel</button> 
 			</a></p>
-		<br>
-	</div>
-	<div class="col-sm-9 main">
-		<div ng-repeat="hotel in hotelResults">
-			<br>
 			<p><h4>Hotel ID: {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].hotelId}}</h4></p>
 			<p><h4>Rate: ${{hotelResults.HotelListResponse.HotelList.HotelSummary[1].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}</h4></p>
 			<p><h4>Hotel Name: {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].name}}</h4></p>
@@ -78,18 +71,10 @@
 			<a href= "{{hotelResults.HotelListResponse.HotelList.HotelSummary[1].deepLink}}">TravelNow</a></h4></p>
 			<p><h4>lat: {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].latitude}} </h4></p>
 			<p><h4>long: {{hotelResults.HotelListResponse.HotelList.HotelSummary[1].longitude}}</h4></p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div>
 </li>
 	<!-- ============================================================================================================= 
 	==============================================result 3============================================================= -->
 <li>
-	<div class="col-lg-3 col-lg-2 sidebar">			
 		<p><h3>{{hotelResults.HotelListResponse.EanWsError.verboseMessage}}</h3></p>
 		<p>
 		<img src="http://media.expedia.com{{hotelResults.HotelListResponse.HotelList.HotelSummary[2].thumbNailUrl}}" width="175" height="175">
@@ -104,10 +89,6 @@
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[2].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}">
 			<button ng-click="bookSelectedHotel(booking)" class="btn btn-primary" >Selecct this Hotel</button> 
 			</a></p>
-		<br>
-	</div>
-	<div class="col-sm-9 main">
-		<div ng-repeat="hotel in hotelResults">
 			<br>
 			<p><h4>Hotel ID: {{hotelResults.HotelListResponse.HotelList.HotelSummary[2].hotelId}}</h4></p>
 			<p><h4>Rate: ${{hotelResults.HotelListResponse.HotelList.HotelSummary[2].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}</h4></p>
@@ -117,18 +98,10 @@
 			<a href= "{{hotelResults.HotelListResponse.HotelList.HotelSummary[2].deepLink}}">TravelNow</a></h4></p>
 			<p><h4>lat: {{hotelResults.HotelListResponse.HotelList.HotelSummary[2].latitude}} </h4></p>
 			<p><h4>long: {{hotelResults.HotelListResponse.HotelList.HotelSummary[2].longitude}}</h4></p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div>
 </li>
 	<!-- =====================================================================================================
 	========================================================result 4==========================================-->
 <li>
-	<div class="col-lg-3 col-lg-2 sidebar">			
 		<p><h3>{{hotelResults.HotelListResponse.EanWsError.verboseMessage}}</h3></p>
 		<p>
 		<img src="http://media.expedia.com{{hotelResults.HotelListResponse.HotelList.HotelSummary[3].thumbNailUrl}}" width="175" height="175">
@@ -143,11 +116,6 @@
 		{{hotelResults.HotelListResponse.HotelList.HotelSummary[3].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}">
 			<button ng-click="bookSelectedHotel(booking)" class="btn btn-primary" >Selecct this Hotel</button> 
 			</a></p>
-		<br>
-	</div>
-	<div class="col-sm-9 main">
-		<div ng-repeat="hotel in hotelResults">
-			<br>
 			<p><h4>Hotel ID: {{hotelResults.HotelListResponse.HotelList.HotelSummary[3].hotelId}}</h4></p>
 			<p><h4>Rate: ${{hotelResults.HotelListResponse.HotelList.HotelSummary[3].RoomRateDetailsList.RoomRateDetails.RateInfos.RateInfo.ChargeableRateInfo['@total']}}</h4></p>
 			<p><h4>Hotel Name: {{hotelResults.HotelListResponse.HotelList.HotelSummary[3].name}}</h4></p>
@@ -156,13 +124,6 @@
 			<a href= "{{hotelResults.HotelListResponse.HotelList.HotelSummary[3].deepLink}}">TravelNow</a></h4></p>
 			<p><h4>lat: {{hotelResults.HotelListResponse.HotelList.HotelSummary[3].latitude}} </h4></p>
 			<p><h4>long: {{hotelResults.HotelListResponse.HotelList.HotelSummary[3].longitude}}</h4></p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div>
-	</div>
 	</li>
 	<!-- ======================================================================================================-->
 </ul>

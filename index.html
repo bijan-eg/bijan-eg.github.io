@@ -25,6 +25,7 @@
   <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
   <!--<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>-->
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCBj0SyLS4hpfKrxx3OiQ04T7qeq1bGCNM&sensor=false"></script>
   <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.css" rel="stylesheet" />
   <script src="http://code.angularjs.org/1.2.0/angular-animate.min.js" ></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.js"></script>-->
@@ -37,23 +38,23 @@
 		  <a href="#/new-package" class="topbtn"><button class="btn btn-primary" >Create Package</button></a>
 		  </h3>
 		  
-		  <ul class="nav nav-justified">
+		  <ul class="nav nav-pills nav-justified">
 			<li><a href="#/created-packages">Created Packages</a></li>
 			<li><a href="#/reserved-packages">Reserved Packages</a></li>
 			<li><a href="#/published-packages">Published Packages</a></li>
 			<li><a href="#/assigned-packages">Assigned Packages</a></li>
 		  </ul>
     </div>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+	  <!--[if lt IE 7]>
+		  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
 
-  <div ng-view> </div >
-<!--
-  <div class="footer">
-  <p>Angular seed app: v<span app-version></span></p>
-  </div>-->
-</div>
+	<div ng-view> </div >
+	  <!--
+	  <div class="footer">
+	  <p>Angular seed app: v<span app-version></span></p>
+	  </div>-->
+ </div>
   <script type="text/javascript" src="js/datepickr.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/prettify-min.js"></script>
