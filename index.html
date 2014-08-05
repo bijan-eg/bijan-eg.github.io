@@ -34,28 +34,35 @@
 <body >
  <div class="container ">
 	<div class="masthead">
-  		  <h3 class="text-muted"><a href="#/created-packages">Agent Portal</a>
+  		  <h3 class="text-muted"><a href="#/created-packages"><img style="width: 60px; height: 60px;" src="app_icon.ico"></img>   Agent Portal</a>
 		  <div class="spinner" ng-show="loading"></div>
-		  <a href="#/new-package" class="topbtn"><button class="btn btn-primary" >Create Package</button></a>
+		  <a href="#/new-package" class="topbtn"><button class="btn btn-primary" style="margin-top:11px;">Create Package</button></a>
 		  </h3>
 		  <br>
 		  
-		  <ul class="nav nav-justified">
-			<li><a href="#/created-packages">Created Packages</a></li>
-			<li><a href="#/reserved-packages">Reserved Packages</a></li>
-			<li><a href="#/published-packages">Published Packages</a></li>
-			<li><a href="#/assigned-packages">Assigned Packages</a></li>
+		  <ul class="nav nav-justified" >
+			<li id="tabsActive" class="active"><a href="#/created-packages">Created Packages</a></li>
+			<li id="tabsActive"><a href="#/reserved-packages">Reserved Packages</a></li>
+			<li id="tabsActive"><a href="#/published-packages">Published Packages</a></li>
+			<li id="tabsActive"><a href="#/assigned-packages">Assigned Packages</a></li>
 		  </ul>
     </div>
-	  <!--[if lt IE 7]>
-		  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
+		<script type="text/javascript">
+			$(document).ready(function () {
+			$('.nav li a').click(function() {
 
+				$('.nav li').removeClass('active');
+
+				var $parent = $(this).parent();
+				if (!$parent.hasClass('active')) {
+					$parent.addClass('active');
+				}
+				//e.preventDefault();
+			});
+		});
+		</script>
 	<div ng-view> </div >
-	  <!--
-	  <div class="footer">
-	  <p>Angular seed app: v<span app-version></span></p>
-	  </div>-->
+	  
  </div>
   <script type="text/javascript" src="js/datepickr.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

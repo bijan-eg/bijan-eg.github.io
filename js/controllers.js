@@ -7,15 +7,27 @@ angular.module('travelApp.controllers', [])
 		$scope.myToken = result.data.token;	
 	});
 	$scope.createPackage = function(resultPackage) {
+	
+	var myimages = [
+						{image: "https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-1.jpg"},
+						{image: "https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-4.jpg"},
+						{image: "https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-6.jpg"},
+						{image: "https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-3.jpg"},
+						{image: "https://raw.githubusercontent.com/bijan-eg/packageImages/master/183.jpg"}
+					];
+	var ry=Math.floor(Math.random()*myimages.length);
+
+    $scope.randomImage = myimages[ry];
 		var createPackage = $window.confirm('Are you sure you want to create this package?');
 		if (createPackage) {
+		var imageURL = $scope.randomImage.image;
 			var payload = {
 			"package_name": $scope.package_name, 
 			"description": $scope.description, 
 			"start_date": $scope.start_date, 
 			"end_date": $scope.end_date, 
 			"package_type": $scope.package_type, 
-			"image_url":"https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-4.jpg",
+			"image_url":imageURL,
 			"flight": "false", 
 			"hotel": "true", 
 			"insurance": "false", 
