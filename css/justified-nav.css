@@ -22,7 +22,7 @@ body {
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
 
 .nav-justified {
-  background-color: #eee;
+  background-color: #5cb85c;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: -19px;
@@ -36,7 +36,7 @@ body {
   text-align: center;
   background-color: #88BE71; /* Old browsers */
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e5e5e5));
-  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
+  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #5cb85c 100%);
   background-image:      -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(top), color-stop(0%, #f5f5f5), to(#e5e5e5));
   background-image:         linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%);

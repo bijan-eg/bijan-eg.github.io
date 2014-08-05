@@ -66,7 +66,7 @@ body, .navbar .navbar-inner .container-fluid {
 }
 
 body{
-  background: url("../img/grid.png") repeat-x;
+  background: url("../img/grid.png") repeat-x fixed 0% 0% #D8E0DE;
   background-attachment: fixed;
 }
 
