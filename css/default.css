@@ -37,7 +37,7 @@ ul.breadcrumb {
 }
 
 form select, form input:not(.nfi), form textarea {
-  width: 90%;
+  width: 250%;
 }
 
 form select[multiple] {
