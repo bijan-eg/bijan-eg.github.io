@@ -178,6 +178,7 @@ angular.module('travelApp.controllers', [])
 		sharedProperties.setRoomTypeCode($routeParams.roomTypeCode);
 		sharedProperties.setRateCode($routeParams.rateCode);
 		sharedProperties.setChargeableRate($routeParams.chargeableRate);
+		$scope.checkout = $routeParams.chargeableRate;
 		$scope.saveEmail = function (item, event) {
 			sharedProperties.setEmail($scope.bookemail);
 		}
