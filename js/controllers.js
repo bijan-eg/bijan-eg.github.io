@@ -15,6 +15,7 @@ angular.module('travelApp.controllers', [])
 			"start_date": $scope.start_date, 
 			"end_date": $scope.end_date, 
 			"package_type": $scope.package_type, 
+			"image_url":"https://raw.githubusercontent.com/bijan-eg/packageImages/master/h-4.jpg",
 			"flight": "false", 
 			"hotel": "true", 
 			"insurance": "false", 

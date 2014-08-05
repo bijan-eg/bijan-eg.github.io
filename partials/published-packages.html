@@ -6,6 +6,27 @@
 	<input ng-model="searchText">
 </div>
 <br>
+
+<div>
+<ul class="thumbnails" style="list-style-type:none">
+  <li class="span3" ng-repeat="pkg in packages | filter:searchText" style="display:inline">
+	<div class="thumbnail" ng-if="pkg.status == 'published'">
+	   <span>{{pkg.package_type}}</span>
+		  <div class="caption">
+		  <a ng-href="#/created-packages/{{pkg.id}}"><img  alt="300x200" style="width: 240px; height: 180px;" src={{pkg.image_url}}></a>
+		  <br>
+		  <input type="radio" ng-model="$parent.currentPackage" name="foo" value="{{pkg}}" id="{{pkg.id}}">
+			<h3><a ng-href="#/created-packages/{{pkg.id}}"><b>{{pkg.package_name}}</b></a></h3>
+			<br>
+			<p><b>Start Date:</b>{{pkg.start_date}}</p>
+			<p><b>End Date:</b>{{pkg.end_date}}</p>
+			<p>{{pkg.description}}</p>
+		  </div>                  
+	</div>
+  </li>
+</ul>
+</div>
+<!--
 <table class="table table-striped">
   <tr>
     <th>Select</th>
@@ -24,3 +45,4 @@
 		<td ng-if="pkg.status == 'published'"><a>{{pkg.description}}</a></td>	  
   </tr>
 </table>
+-->
